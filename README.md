@@ -6,13 +6,13 @@ operations with external tools
    [meld](http://meldmerge.org/), and 
    [diffmerge](https://sourcegear.com/diffmerge/).
 
-##Commands
+## Commands
 
     * gsvn
     * vsvn
     * svngrep
 
-##Helper Functions
+## Helper Functions
 
     * diffmerge
 
