@@ -14,7 +14,10 @@ operations with external tools
 
 ## Helper Functions
 
-    * diffmerge
+    * diffmerge-svndiff
+    * diffmerge-svnmerge
+    * svndiff-vimdiff
+    * svnmerge-vimdiff
 
 ## issues
 
@@ -22,7 +25,7 @@ operations with external tools
 * git stuff needs testing
 * svn stuff needs re-testing
 * want to support more than `svn` and `git`. 
-  [`fossil`](https://www.fossil-scm.org/) ?
+  [`fossil`](https://www.fossil-scm.org/)?
 
 ## Notes/Tips
 
