@@ -7,11 +7,13 @@ operations with external tools
    [diffmerge](https://sourcegear.com/diffmerge/).
 
 ##Commands
+
     * gsvn
     * vsvn
     * svngrep
 
 ##Helper Functions
+
     * diffmerge
 
 ## issues
@@ -59,4 +61,4 @@ endif
 
 I have not used [`mercurial`](https://www.mercurial-scm.org/)
 but they have suggestions for working with `vim` [here](
-https://www.mercurial-scm.org/wiki/MergingWithVim)
+https://www.mercurial-scm.org/wiki/MergingWithVim).
