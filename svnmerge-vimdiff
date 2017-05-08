@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+#see ideas at http://www.toofishes.net/blog/three-way-merging-git-using-vim/
+#
+# svn will invoke this with a bunch of arguments.  These are:
+# $1 - path to the file that is the original ("unmodified base file")
+# $2 - path to the file that's the incoming merge version
+# $3 - path to the file that's the latest from trunk (current working copy)
+# $4 - path to where svn expects the merged output to be written
+#
+# "Return an errorcode of 0 if the conflict was resolved; 1 otherwise.
+#  Any other errorcode will be treated as fatal."
+exec vim -f -d -c "wincmd J" "$4" "$3" "$1" "$2"

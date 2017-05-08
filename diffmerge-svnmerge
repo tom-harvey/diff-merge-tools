@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# [tah] from http://semicrazy.wordpress.com/2009/10/08/using-diffmerge-as-your-subversion-external-merge-tool/
+#
+# [tah] let's just see if we can use diffmerge on our $PATH
+# [tah] diffmerge 3.3.0 and -r will give good exit status for subversion merge
+#
+# [tah] for tortoisesvn "Using the command line parameters %mine %merge %theirs"
+# [tah] see http://simeonpilgrim.com/blog/2007/06/05/sourcegears-diffmerge-and-subversion/
+#DIFFMERGE_PATH=/Applications/DiffMerge/DiffMerge.app
+#DIFFMERGE_EXEC=${DIFFMERGE_PATH}/Contents/MacOS/DiffMerge
+DIFFMERGE_EXEC=diffmerge
+#
+# svn will invoke this with a bunch of arguments.  These are:
+# $1 - path to the file that is the original
+# $2 - path to the file that's the incoming merge version
+# $3 - path to the file that's the latest from trunk (current working copy)
+# $4 - path to where svn expects the merged output to be written
+${DIFFMERGE_EXEC} --nosplash -m -t1="Incoming Merge Changes"  -t2="Original (merged)" -t3="Current Working Copy changes" -r="$4" "$2" "$1" "$3"

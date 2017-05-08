@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# run svn with gui diff and merge options (diffmerge)
+# these aren't always enabled because # diffmerge crashes hard 
+# on the mac when invoked from the command line without a windowing 
+# environment available.
+#
+export SVN_MERGE=diffmerge-svnmerge
+# TODO untested/unfinished!
+# TODO gui diffs only so far, 
+# apparently we don't really need absolute paths (docs say we do)
+exec svn --config-option config:helpers:diff-cmd=diffmerge-svndiff  "$@"
+#exec svn --config-option config:helpers:diff-cmd=diffmerge-svndiff merge-tool-cmd $*

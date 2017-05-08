@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# for diffmerge 3.3.0 and later
+#
+echo svn diff -diffmerge-svndiff "$@"

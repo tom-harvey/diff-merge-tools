@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# more ideas at http://www.toofishes.net/blog/three-way-merging-git-using-vim/
+shift 5
+/usr/bin/vimdiff -f "$@"
+#
+# debug: look directly at svn diff args
+#for diffargs in $* ; do
+#  echo arg \"$1\"
+#  shift
+#done
+#exit 1

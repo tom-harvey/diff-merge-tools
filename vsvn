@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# run svn with vim diff and merge options
+#
+# apparently we don't really need absolute paths (docs say we do)
+#
+exec svn --config-option config:helpers:diff-cmd=svndiff-vimdiff \
+         --config-option config:helpers:merge-tool-cmd=svnmerge-vimdiff "$@"

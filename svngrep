@@ -1,0 +1,24 @@
+#!/bin/sh
+# [tah: grabbed from the net]
+# TODO needs perl changed to awk
+# needs to report filenames always: doesn't always] do so 
+pattern=$1
+shift
+ 
+for file in "$@"; 
+do
+  svn log -q "$file" 2>/dev/null | perl -ne 'print "$1\n" if /^r(\d+)/' | 
+  while read -r r 
+  do
+      match=$(svn cat -r "$r" "$file" | grep "$pattern")
+    result=$?
+    if [ $result -eq 0 ] ; then
+      # ignore echo flags warning
+      # shellcheck disable=SC2039
+      /bin/echo -n "$file @r$r: "
+      /bin/echo "$match";
+    elif [ $result -ne 1 ] ; then
+      exit 2
+    fi
+  done
+done;

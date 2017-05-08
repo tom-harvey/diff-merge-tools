@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# for diffmerge 3.3.0 and later
+#
+exec diffmerge -u -t1="$3" -t2="$5" "$6" "$7"
+
+# debug: look directly at svn diff args
+#for diffargs in $* ; do
+#  echo arg \"$1\"
+#  shift
+#done
+#exit 1
